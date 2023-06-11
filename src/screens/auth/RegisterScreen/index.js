@@ -9,26 +9,27 @@ import {
     TextInput,
     TouchableOpacity,
 } from "react-native";
-import { Routes } from "../../../utils/Routes";
-export default function SIGNIN({ navigation }) {
-
+import {Routes} from "../../../utils/Routes"
+export default function SIGNUP({ navigation }) {
     const [seePassword, setSeePassword] = useState(true);
     const [password, setpassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [seeConfirmPassword, setSeeConfirmPassword] = useState(true);
 
 
     return (
         <View style={[styles.container]}>
 
+
+
             <View style={styles.header}>
-
                 <Text style={styles.text1}>Heal Acres</Text>
+
+
             </View>
-
-
-
             <View style={styles.container1}>
 
-                <Text style={styles.text}>LOGIN</Text>
+                <Text style={styles.text}>CREATE ACCOUNT</Text>
                 <View style={styles.title}>
 
                     <TextInput
@@ -48,7 +49,6 @@ export default function SIGNIN({ navigation }) {
                     </View>
                 </View>
 
-
                 <View style={styles.title}>
                     <TextInput
                         value={password}
@@ -60,7 +60,6 @@ export default function SIGNIN({ navigation }) {
                         keyboardType="default"
                         onPress={() => setSeePassword(!seePassword)}
                         onChangeText={setpassword}
-
                     />
                     <View style={styles.icon}>
                         <TouchableOpacity
@@ -76,26 +75,22 @@ export default function SIGNIN({ navigation }) {
                         </TouchableOpacity>
                     </View>
                 </View>
-
-                <TouchableOpacity >
-                    <Text style={styles.forgotPassword}> Forgot Password ?</Text>
-                </TouchableOpacity>
-
                 <TouchableOpacity
                     style={styles.btn}
-                    onPress={()=>navigation.navigate(Routes.HomeScreen)}
+                    onPress={()=>navigation.navigate(Routes.App)}
                 >
-                    <Text style={styles.sub}>LOGIN</Text>
+                
+                    <Text style={styles.sub}>REGISTER</Text>
                 </TouchableOpacity>
 
 
                 <Text style={styles.or}>--------------OR--------------</Text>
 
 
-                <TouchableOpacity onPress={() => navigation.navigate('SIGNUP')}
+                <TouchableOpacity onPress={() => navigation.navigate('SIGNIN')}
                     style={styles.btn1}
                 >
-                    <Text style={styles.sub1}>SIGNUP</Text>
+                    <Text style={styles.sub1}>LOGIN</Text>
                 </TouchableOpacity>
 
 
@@ -111,6 +106,7 @@ export default function SIGNIN({ navigation }) {
 
 const styles = StyleSheet.create({
     container: {
+        //width: "100%",
         width: "100%",
         height: 100,
         flex: 1,
@@ -127,7 +123,7 @@ const styles = StyleSheet.create({
         //paddingVertical: "8%",
         borderRadius: 15,
         borderWidth: 0,
-        marginTop: 0,
+        marginTop: 10,
         marginBottom: 30,
         // padding:10,
 
@@ -136,9 +132,9 @@ const styles = StyleSheet.create({
         width: "100%",
         color: 'black',
         bottom: 15,
-        fontSize: 35,
+        fontSize: 30,
         fontWeight: 'bold',
-        letterSpacing: 2,
+        letterSpacing: 1,
         //marginLeft:9,
         textAlign: "center",
         // paddingHorizontal:10,
@@ -209,14 +205,12 @@ const styles = StyleSheet.create({
     },
 
     header: {
-        width: 250,
-        height: 100,
-        //backgroundColor:"red",
-        flex: 1,
+        height: 130,
+        flex: 0,
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "row",
-        paddingRight: 40,
+        //backgroundColor:"red",
 
     },
     icon: {
@@ -245,4 +239,5 @@ const styles = StyleSheet.create({
         letterSpacing: 1,
         width: '100%',
     },
+
 })

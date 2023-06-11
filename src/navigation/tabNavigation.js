@@ -8,10 +8,31 @@ const Tab = createBottomTabNavigator();
 
 export default function TabNavigation() {
   return (
-    <Tab.Navigator initialRouteName={Routes.HomeScreen}>
-      <Tab.Screen name={Routes.HomeScreen} component={Screen.HomeScreen} />
-      <Tab.Screen name={Routes.OrderScreen} component={Screen.OrderScreen} />
-      <Tab.Screen name={Routes.ProfileScreen} component={Screen.ProfileScreen} />
+    <Tab.Navigator initialRouteName={Routes.Home}>
+      <Tab.Screen name={Routes.Home} component={Screen.Home} />
+      <Tab.Screen name={Routes.Order} component={Screen.Order} />
+      <Tab.Screen name={Routes.Profile} component={Screen.Profile} />
+
+
+      {/* screenOptions={({ Routes }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
+          let rn = Routes.name;
+
+          if (rn ===Home) {
+            iconName = focused ? 'home' : 'home-outline';
+
+          } else if (rn ===Order) {
+            iconName = focused ? 'order' : 'order-outline';
+
+          } else if (rn ===Profile) {
+            iconName = focused ? 'profile' : 'account-outline';
+          }
+
+          // You can return any component that you like here!
+          return <Ionicons name={iconName} size={size} color={color} />;
+        }
+      })} */}
     </Tab.Navigator>
   );
 }

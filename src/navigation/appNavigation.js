@@ -5,7 +5,7 @@ import {Routes} from '../utils/Routes';
 import Screen from '../screens';
 import TabNavigation from './tabNavigation';
 import {Colors} from '../styles';
-
+// import DrawerNavigation from './drawerNavigation';
 const AppStack = createNativeStackNavigator();
 
 export default function AppNavigation() {
@@ -21,9 +21,12 @@ export default function AppNavigation() {
         headerShown: false,
       }}>
       <AppStack.Screen name={Routes.Tab} component={TabNavigation} />
-      <AppStack.Screen name={Routes.HomeScreen} component={Screen.HomeScreen} />
-      <AppStack.Screen name={Routes.OrderScreen} component={Screen.OrderScreen} />
-      <AppStack.Screen name={Routes.ProfileScreeen} component={Screen.ProfileScreeen} />
+      <AppStack.Screen name={Routes.Home} component={Screen.Home} />
+      <AppStack.Screen name={Routes.Order} component={Screen.Order} />
+      <AppStack.Screen name={Routes.Profile} component={Screen.Profile} />
+      {/* <AppStack.Screen name={Routes.Drawer} component={Screen.DrawerNavigation} />
+      <AppStack.Screen name={Routes.About} component={Screen.About} />
+      <AppStack.Screen name={Routes.History} component={Screen.History} /> */}
     </AppStack.Navigator>
   );
 }
